@@ -1,5 +1,6 @@
 // react
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import React from "react";
 
 // shadcn - components
 import { Input } from "@/components/ui/input";
@@ -339,7 +340,10 @@ export default function TableData() {
             <PaginationItem>
               <PaginationPrevious
                 onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
-                disabled={currentPage === 1}
+                aria-disabled={currentPage === 1}
+                className={
+                  currentPage === 1 ? "pointer-events-none opacity-50" : ""
+                }
               />
             </PaginationItem>
 
@@ -360,7 +364,12 @@ export default function TableData() {
                 onClick={() =>
                   setCurrentPage((p) => Math.min(p + 1, totalPages))
                 }
-                disabled={currentPage === totalPages}
+                aria-disabled={currentPage === totalPages}
+                className={
+                  currentPage === totalPages
+                    ? "pointer-events-none opacity-50"
+                    : ""
+                }
               />
             </PaginationItem>
           </PaginationContent>
