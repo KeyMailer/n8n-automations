@@ -15,6 +15,56 @@ export interface Automation {
 
 export const automations: Automation[] = [
   {
+    id: "posYxHcAHOobSFYn",
+    name: "Games Around The World",
+    description:
+      "Scrape the Games Around the World website (category: All) and extract the game name, description, genre, release date, developer, publisher, platform, player, language, Discord link, website link, and Steam link.",
+    status: "active",
+    trigger: "Manual",
+    triggerLink: "",
+    document: "Google Sheet",
+    documentLink:
+      "https://docs.google.com/spreadsheets/d/1mQR4Yo3UQVY_FpgehhY7yo9zz_I8M3gjwmcpAglRkkE/edit?gid=0#gid=0",
+    tools: ["Puppeteer", "Google Sheet"],
+    dataflow: [
+      "Start automation workflow",
+      "Fetch all games from Games Around the World (Category: All)",
+      "Extract list of game detail URLs",
+      "Iterate through each game URL",
+      "Scrape game details (name, description, genre, release date, developer, publisher, platform, player, languages, Discord link, website link, Steam link)",
+      "Store extracted data in Google Sheets",
+      "Repeat until all games are processed",
+      "End workflow",
+    ],
+  },
+  {
+    id: "m1sxvWMsizku4KH1",
+    name: "Event Promo",
+    description:
+      "This automation will check the Steam tags input in a Google Sheet. It will then check Steam for matching tags. If a match is found, it will retrieve the games related to those tags and collect the game name, publisher, developer, and Steam link. The data will then be cross-referenced in Madmin to check if the game exists there and to retrieve the publisher and their contact information.",
+    status: "active",
+    trigger: "Form",
+    triggerLink:
+      "https://neightn.indie-demo.com/form/c1e81cd2-5bc4-4ed5-b83b-7d4652353d7d",
+    document: "Google Sheet",
+    documentLink:
+      "https://docs.google.com/spreadsheets/d/11YQ20YA4Khsb6l60nHGYDe9aSJJ01S8LJ26UlSY7wtY/edit?gid=0#gid=0",
+    tools: ["Steam", "Madmin", "Google Sheet"],
+    dataflow: [
+      "Form submission triggers automation",
+      "Read Steam tags from Google Sheet",
+      "Search Steam for matching tags",
+      "Retrieve games associated with the tags",
+      "Loop through each game",
+      "Extract game details (name, publisher, developer, Steam link)",
+      "Cross-reference the game in Madmin",
+      "Retrieve publisher and contact information if available",
+      "Save results to Google Sheet",
+      "Repeat until all tags and games are processed",
+      "End workflow",
+    ],
+  },
+  {
     id: "KS3gdPQY1bA0lBRP",
     name: "Recent Release Game",
     description:
@@ -26,7 +76,7 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/1apzXbgiOGMUsJIpnfvH-7c2qwJnVWqBedIcE7e7VVtM/edit?gid=0#gid=0",
-    tools: ["Madmin", "Steam", "Google Sheet"],
+    tools: ["Madmin", "Puppeteer", "Steam", "Google Sheet"],
     dataflow: [
       "User manually inputs data into Google Sheet",
       "User types 'Run' in the form to trigger the automation",
@@ -113,7 +163,7 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/18MR1ZohK-yZzKUCTU9VFD27607kdA_C6VdCS4afvqi4/edit?gid=0#gid=0",
-    tools: ["API", "Google Sheet"],
+    tools: ["Similarweb API", "Google Sheet"],
     dataflow: [
       "Import the downloaded CSV data (check document README)",
       "Copy only the gamer_id and approved_domain columns from the CSV",
@@ -136,7 +186,7 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/13zGM11fO-TbN_ayA4tQ4oZmlWZZQ-jCC42kDjK1vhNU/edit?gid=0#gid=0",
-    tools: ["API", "Google Sheet"],
+    tools: ["Similarweb API", "Google Sheet"],
     dataflow: [
       "Import the downloaded CSV data (check document README)",
       "Add updated_similarweb_api_data column in List sheet",
@@ -185,7 +235,7 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/183FnNcP4inwXqtFztFaekdsoghjI6-EXxPtra_SEgY4/edit?gid=1886736831#gid=1886736831",
-    tools: ["Madmin", "Intercom", "ActiveCampaign", "API", "Google Sheet"],
+    tools: ["Madmin", "Intercom", "ActiveCampaign", "Steam", "Google Sheet"],
     dataflow: [
       "Get latest scraped data from Google Sheets",
       "Check if data exists in Madmin",
