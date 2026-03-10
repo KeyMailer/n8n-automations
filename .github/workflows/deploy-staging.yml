@@ -1,0 +1,52 @@
+name: Deploy Staging
+
+on:
+  push:
+    branches:
+      - staging
+
+concurrency:
+  group: deploy-staging-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Remove dangling images and build cache
+        run: |
+          docker image prune -f
+          docker builder prune -f
+
+      - name: Build image
+        run: |
+          docker build --no-cache -t n8n-automations .
+
+      - name: Stop and remove existing container
+        run: |
+          docker stop n8n-automations || true
+          docker rm n8n-automations || true
+
+      - name: Start container
+        run: |
+          docker run -d -p 5174:80 --name n8n-automations --restart unless-stopped n8n-automations
+
+      - name: Health check
+        run: |
+          echo "Waiting for container to start..."
+          for i in $(seq 1 12); do
+            STATUS=$(docker inspect --format='{{.State.Status}}' n8n-automations 2>/dev/null || echo "missing")
+            echo "Attempt $i: $STATUS"
+            if [ "$STATUS" = "running" ]; then
+              echo "Container is running!"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "Container failed to start"
+          docker logs n8n-automations
+          exit 1
