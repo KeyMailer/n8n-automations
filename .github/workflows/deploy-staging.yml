@@ -3,7 +3,7 @@ name: Deploy Staging
 on:
   push:
     branches:
-      - staging
+      - main
 
 concurrency:
   group: deploy-staging-${{ github.repository }}
