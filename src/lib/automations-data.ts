@@ -15,6 +15,27 @@ export interface Automation {
 
 export const automations: Automation[] = [
   {
+    id: "EEE1XADUOAgk3DF9",
+    name: "Newsletter Booking",
+    description:
+      "The purpose of this automation is to avoid overbooking newsletters such as Influencer and Press, allowing only 13 total bookings per day across all placement types.",
+    status: "active",
+    trigger: "Form",
+    triggerLink:
+      "https://neightn.indie-demo.com/form/3dd75c6a-5fe9-44b3-904e-039b5ea70a90",
+    document: "",
+    documentLink: "",
+    tools: ["Apps Script", "Google Sheet", "Slack"],
+    dataflow: [
+      "This automation will run when a user fills out the form",
+      "For Influencer, bookings are only allowed on Monday and Friday",
+      "For Press, bookings are allowed on Monday, Wednesday, and Friday",
+      "It will send a request to Apps Script to call the locking concurrency",
+      "It will check if the scheduled date and placement are not fully booked",
+      "The system will then save the booking and send a notification to Slack",
+    ],
+  },
+  {
     id: "posYxHcAHOobSFYn",
     name: "Games Around The World",
     description:
@@ -255,7 +276,7 @@ export const automations: Automation[] = [
     status: "inactive",
     trigger: "Manual",
     triggerLink: "",
-    document: "Google Sheet",
+    document: "",
     documentLink: "",
     tools: ["Apify", "Google Sheet"],
     dataflow: [
