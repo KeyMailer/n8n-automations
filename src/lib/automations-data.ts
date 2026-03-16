@@ -23,8 +23,9 @@ export const automations: Automation[] = [
     trigger: "Form",
     triggerLink:
       "https://neightn.indie-demo.com/form/3dd75c6a-5fe9-44b3-904e-039b5ea70a90",
-    document: "",
-    documentLink: "",
+    document: "Google Sheet",
+    documentLink:
+      "https://docs.google.com/spreadsheets/d/1DnlRKLkrYxVK5uNoF7I9DpkQf0hIz_Aec3E3CDdNvVU/edit?gid=450992887#gid=450992887",
     tools: ["Apps Script", "Google Sheet", "Slack"],
     dataflow: [
       "This automation will run when a user fills out the form",
@@ -217,17 +218,17 @@ export const automations: Automation[] = [
     ],
   },
   {
-    id: "AYKRSIYyAhQbhq7K",
-    name: "AutoLead",
+    id: "Ea0zH2LzlEoPGmR8",
+    name: "AL - New & New Lead",
     description:
       "This automation triggers when the user types 'Run' in form. It then retrieves data from Google Sheets, uses that data to check if it exists in Madmin, verifies the data in Intercom and ActiveCampaign, and if the data does not exist in either Intercom or ActiveCampaign, it is saved in 'No Result' for enrichment purposes.",
     status: "active",
     trigger: "Form",
     triggerLink:
-      "https://neightn.indie-demo.com/form/702b081a-2dab-46fc-9516-a4919e15b757",
+      "https://neightn.indie-demo.com/form/d362e9c0-fe60-46a2-9e55-f4106376397e",
     document: "Google Sheet",
     documentLink:
-      "https://docs.google.com/spreadsheets/d/1QfTpIx-P5w8fldPo_9SQDigS1IICWtEsxF_UKDxCpJU/edit?gid=0#gid=0",
+      "https://docs.google.com/spreadsheets/d/1tcH9p_Zx-4UlC3fpccLAjdCWNFlDaS_Hr5eueEv2aBA/edit?gid=0#gid=0",
     tools: ["Madmin", "Intercom", "ActiveCampaign", "Google Sheet"],
     dataflow: [
       "User types 'Run' in the form to trigger the workflow",
@@ -245,6 +246,94 @@ export const automations: Automation[] = [
       "If data does not exist in both platforms, save the data to 'No Result'",
     ],
   },
+  {
+    id: "UvmzeCAdaJTfCQbo",
+    name: "AL - New Steam Release",
+    description:
+      "This automation triggers when the user types 'Run' in form. It then retrieves data from Google Sheets, uses that data to check if it exists in Madmin, verifies the data in Intercom and ActiveCampaign, and if the data does not exist in either Intercom or ActiveCampaign, it is saved in 'No Result' for enrichment purposes.",
+    status: "active",
+    trigger: "Form",
+    triggerLink:
+      "https://neightn.indie-demo.com/form/9e403b1c-2a40-435c-a290-2556ba930a7c",
+    document: "Google Sheet",
+    documentLink:
+      "https://docs.google.com/spreadsheets/d/1t9jYjDAbIkXz1zGxd41DXJSaCgaBnqPZ7hlSF2d0Tos/edit?gid=0#gid=0",
+    tools: ["Madmin", "Intercom", "ActiveCampaign", "Google Sheet"],
+    dataflow: [
+      "User types 'Run' in the form to trigger the workflow",
+      "Retrieve data from Google Sheets",
+      "Check if the data exists in Madmin",
+      "Check the data in Intercom",
+      "  └─ Condition: user_id must start with 'p_'",
+      "  └─ Condition: publisher_name must match Publisher/Developer Name in Intercom",
+      "  └─ If conditions are met, save the data",
+      "  └─ If conditions are not met, do not save",
+      "Get all contacts related to the account from Intercom",
+      "Check the data in ActiveCampaign",
+      "  └─ If exist, save the data",
+      "  └─ If not, do nothing",
+      "If data does not exist in both platforms, save the data to 'No Result'",
+    ],
+  },
+  {
+    id: "wpt0K77zlXSwJlZK",
+    name: "AL - Reactivation Leadgen",
+    description:
+      "This automation triggers when the user types 'Run' in form. It then retrieves data from Google Sheets, uses that data to check if it exists in Madmin, verifies the data in Intercom and ActiveCampaign, and if the data does not exist in either Intercom or ActiveCampaign, it is saved in 'No Result' for enrichment purposes.",
+    status: "active",
+    trigger: "Form",
+    triggerLink:
+      "https://neightn.indie-demo.com/form/f3872300-7ec6-44a6-85e9-f720738927b3",
+    document: "Google Sheet",
+    documentLink:
+      "https://docs.google.com/spreadsheets/d/18BX6R492N903_GlhGMQtd54Ofbw1YO1t2C7glzRRXXg/edit?gid=0#gid=0",
+    tools: ["Madmin", "Intercom", "ActiveCampaign", "Google Sheet"],
+    dataflow: [
+      "User types 'Run' in the form to trigger the workflow",
+      "Retrieve data from Google Sheets",
+      "Check if the data exists in Madmin",
+      "Check the data in Intercom",
+      "  └─ Condition: user_id must start with 'p_'",
+      "  └─ Condition: publisher_name must match Publisher/Developer Name in Intercom",
+      "  └─ If conditions are met, save the data",
+      "  └─ If conditions are not met, do not save",
+      "Get all contacts related to the account from Intercom",
+      "Check the data in ActiveCampaign",
+      "  └─ If exist, save the data",
+      "  └─ If not, do nothing",
+      "If data does not exist in both platforms, save the data to 'No Result'",
+    ],
+  },
+  {
+    id: "GmCiCm7KFOvq2O3Y",
+    name: "AL - Leadgen - TBA",
+    description:
+      "This automation triggers when the user types 'Run' in form. It then retrieves data from Google Sheets, uses that data to check if it exists in Madmin, verifies the data in Intercom and ActiveCampaign, and if the data does not exist in either Intercom or ActiveCampaign, it is saved in 'No Result' for enrichment purposes.",
+    status: "active",
+    trigger: "Form",
+    triggerLink:
+      "https://neightn.indie-demo.com/form/656cf243-8999-45ef-b178-ae322165231b",
+    document: "Google Sheet",
+    documentLink:
+      "https://docs.google.com/spreadsheets/d/1kVe9Iyy4PL9LxCf8PzRzjdQ8XoEsU7P7qAdeVFCcLLU/edit?gid=0#gid=0",
+    tools: ["Madmin", "Intercom", "ActiveCampaign", "Google Sheet"],
+    dataflow: [
+      "User types 'Run' in the form to trigger the workflow",
+      "Retrieve data from Google Sheets",
+      "Check if the data exists in Madmin",
+      "Check the data in Intercom",
+      "  └─ Condition: user_id must start with 'p_'",
+      "  └─ Condition: publisher_name must match Publisher/Developer Name in Intercom",
+      "  └─ If conditions are met, save the data",
+      "  └─ If conditions are not met, do not save",
+      "Get all contacts related to the account from Intercom",
+      "Check the data in ActiveCampaign",
+      "  └─ If exist, save the data",
+      "  └─ If not, do nothing",
+      "If data does not exist in both platforms, save the data to 'No Result'",
+    ],
+  },
+
   {
     id: "9Mki2Epwibq78qq8",
     name: "Lead Generation",
