@@ -9,6 +9,7 @@ export interface Automation {
   triggerLink: string;
   document: string;
   documentLink: string;
+  wikiLink: string;
   tools: string[];
   dataflow: string[];
 }
@@ -26,7 +27,9 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/1DnlRKLkrYxVK5uNoF7I9DpkQf0hIz_Aec3E3CDdNvVU/edit?gid=450992887#gid=450992887",
-    tools: ["Apps Script", "Google Sheet", "Slack"],
+    wikiLink:
+      "https://redmine.lifejak.com/projects/keymailer/wiki/Newsletter_Booking",
+    tools: ["Webhook", "Apps Script", "Google Sheet", "Slack"],
     dataflow: [
       "This automation will run when a user fills out the form",
       "For Influencer, bookings are only allowed on Monday and Friday",
@@ -47,6 +50,8 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/1mQR4Yo3UQVY_FpgehhY7yo9zz_I8M3gjwmcpAglRkkE/edit?gid=0#gid=0",
+    wikiLink:
+      "https://redmine.lifejak.com/projects/keymailer/wiki/Games_Around_The_World",
     tools: ["Puppeteer", "Google Sheet"],
     dataflow: [
       "Start automation workflow",
@@ -71,6 +76,7 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/11YQ20YA4Khsb6l60nHGYDe9aSJJ01S8LJ26UlSY7wtY/edit?gid=0#gid=0",
+    wikiLink: "https://redmine.lifejak.com/projects/keymailer/wiki/Event_Promo",
     tools: ["Steam", "Madmin", "Google Sheet"],
     dataflow: [
       "Form submission triggers automation",
@@ -98,6 +104,8 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/1apzXbgiOGMUsJIpnfvH-7c2qwJnVWqBedIcE7e7VVtM/edit?gid=0#gid=0",
+    wikiLink:
+      "https://redmine.lifejak.com/projects/keymailer/wiki/Recent_Release_Game",
     tools: ["Madmin", "Puppeteer", "Steam", "Google Sheet"],
     dataflow: [
       "User manually inputs data into Google Sheet",
@@ -147,6 +155,8 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/1OnIEEPkAKocIF7mUMTQb-OWoWgwkTkxbbYQdm5xYYlo/edit?gid=563145277#gid=563145277",
+    wikiLink:
+      "https://redmine.lifejak.com/projects/keymailer/wiki/PGC_Events_-_Intercom",
     tools: ["Intercom", "Google Sheet"],
     dataflow: [
       "Search attendee name & publisher in Intercom",
@@ -166,6 +176,8 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/1OnIEEPkAKocIF7mUMTQb-OWoWgwkTkxbbYQdm5xYYlo/edit?gid=563145277#gid=563145277",
+    wikiLink:
+      "https://redmine.lifejak.com/projects/keymailer/wiki/PGC_Events_-_ActiveCampaign",
     tools: ["ActiveCampaign", "Google Sheet"],
     dataflow: [
       "Search attendee name in ActiveCampaign",
@@ -185,6 +197,8 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/18MR1ZohK-yZzKUCTU9VFD27607kdA_C6VdCS4afvqi4/edit?gid=0#gid=0",
+    wikiLink:
+      "https://redmine.lifejak.com/projects/keymailer/wiki/Similarweb_v2",
     tools: ["Similarweb API", "Google Sheet"],
     dataflow: [
       "Import the downloaded CSV data (check document README)",
@@ -208,6 +222,8 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/13zGM11fO-TbN_ayA4tQ4oZmlWZZQ-jCC42kDjK1vhNU/edit?gid=0#gid=0",
+    wikiLink:
+      "https://redmine.lifejak.com/projects/keymailer/wiki/Similarweb_v1",
     tools: ["Similarweb API", "Google Sheet"],
     dataflow: [
       "Import the downloaded CSV data (check document README)",
@@ -229,6 +245,7 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/1tcH9p_Zx-4UlC3fpccLAjdCWNFlDaS_Hr5eueEv2aBA/edit?gid=0#gid=0",
+    wikiLink: "https://redmine.lifejak.com/projects/keymailer/wiki/AutoLead",
     tools: ["Madmin", "Intercom", "ActiveCampaign", "Google Sheet"],
     dataflow: [
       "User types 'Run' in the form to trigger the workflow",
@@ -258,6 +275,7 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/1t9jYjDAbIkXz1zGxd41DXJSaCgaBnqPZ7hlSF2d0Tos/edit?gid=0#gid=0",
+    wikiLink: "https://redmine.lifejak.com/projects/keymailer/wiki/AutoLead",
     tools: ["Madmin", "Intercom", "ActiveCampaign", "Google Sheet"],
     dataflow: [
       "User types 'Run' in the form to trigger the workflow",
@@ -287,6 +305,7 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/18BX6R492N903_GlhGMQtd54Ofbw1YO1t2C7glzRRXXg/edit?gid=0#gid=0",
+    wikiLink: "https://redmine.lifejak.com/projects/keymailer/wiki/AutoLead",
     tools: ["Madmin", "Intercom", "ActiveCampaign", "Google Sheet"],
     dataflow: [
       "User types 'Run' in the form to trigger the workflow",
@@ -316,6 +335,7 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/1kVe9Iyy4PL9LxCf8PzRzjdQ8XoEsU7P7qAdeVFCcLLU/edit?gid=0#gid=0",
+    wikiLink: "https://redmine.lifejak.com/projects/keymailer/wiki/AutoLead",
     tools: ["Madmin", "Intercom", "ActiveCampaign", "Google Sheet"],
     dataflow: [
       "User types 'Run' in the form to trigger the workflow",
@@ -345,6 +365,8 @@ export const automations: Automation[] = [
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/183FnNcP4inwXqtFztFaekdsoghjI6-EXxPtra_SEgY4/edit?gid=1886736831#gid=1886736831",
+    wikiLink:
+      "https://redmine.lifejak.com/projects/keymailer/wiki/Lead_Generation",
     tools: ["Madmin", "Intercom", "ActiveCampaign", "Steam", "Google Sheet"],
     dataflow: [
       "Get latest scraped data from Google Sheets",
@@ -367,6 +389,8 @@ export const automations: Automation[] = [
     triggerLink: "",
     document: "",
     documentLink: "",
+    wikiLink:
+      "https://redmine.lifejak.com/projects/keymailer/wiki/Tiktok_Comment_Scraper",
     tools: ["Apify", "Google Sheet"],
     dataflow: [
       "Get the video URL from Google Sheet",

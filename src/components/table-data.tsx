@@ -33,9 +33,6 @@ import { Search, CircleQuestionMark, X } from "lucide-react";
 import { automations } from "@/lib/automations-data";
 import type { AutomationStatus } from "@/lib/automations-data";
 
-// react-router-dom
-import { Link } from "react-router-dom";
-
 export default function TableData() {
   // search state
   const [search, setSearch] = useState("");
@@ -148,8 +145,7 @@ export default function TableData() {
                       />
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>Name and description of the AI workflow.</p>
-                      <p>Click the name to view the overview.</p>
+                      <p>Name of the automation.</p>
                     </TooltipContent>
                   </Tooltip>
                 </div>
@@ -196,6 +192,22 @@ export default function TableData() {
               </TableHead>
               <TableHead>
                 <div className="flex items-center gap-2 ">
+                  Wiki
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <CircleQuestionMark
+                        size={14}
+                        className="text-text-color mt-0.5 cursor-pointer"
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Read the documentation about the automation.</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </TableHead>
+              <TableHead>
+                <div className="flex items-center gap-2 ">
                   Tools
                   <Tooltip>
                     <TooltipTrigger asChild>
@@ -235,7 +247,7 @@ export default function TableData() {
             {paginatedAutomations.length > 0 ? (
               paginatedAutomations.map((auto) => (
                 <TableRow key={auto.id}>
-                  <TableCell className="flex flex-col max-w-xs">
+                  {/* <TableCell className="flex flex-col max-w-xs">
                     <Link
                       to={`/automation/${auto.id}`}
                       title={`${auto.name} overview`}
@@ -246,6 +258,9 @@ export default function TableData() {
                     <span className="text-xs text-muted-foreground line-clamp-1 text-ellipsis">
                       {auto.description}
                     </span>
+                  </TableCell> */}
+                  <TableCell className="flex flex-col max-w-xs">
+                    <span>{auto.name}</span>
                   </TableCell>
                   <TableCell>
                     {auto.triggerLink ? (
@@ -277,7 +292,24 @@ export default function TableData() {
                       </a>
                     ) : (
                       <span className="cursor-not-allowed text-text-color ">
-                        {auto.document}
+                        -
+                      </span>
+                    )}
+                  </TableCell>
+                  <TableCell>
+                    {auto.wikiLink ? (
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        referrerPolicy="no-referrer"
+                        href={auto.wikiLink}
+                        className="cursor-pointer hover:text-[#E3496D]"
+                      >
+                        Wiki
+                      </a>
+                    ) : (
+                      <span className="cursor-not-allowed text-text-color ">
+                        -
                       </span>
                     )}
                   </TableCell>
