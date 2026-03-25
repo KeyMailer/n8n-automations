@@ -332,15 +332,7 @@ export default function TableData() {
 
                   <TableCell>
                     {auto.hasKeys ? (
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        referrerPolicy="no-referrer"
-                        href={auto.hasKeysLink}
-                        className="cursor-pointer hover:text-[#E3496D]"
-                      >
-                        Yes
-                      </a>
+                      <span>Yes</span>
                     ) : (
                       <span className="cursor-not-allowed text-text-color ">
                         No
