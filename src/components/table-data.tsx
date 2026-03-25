@@ -208,6 +208,22 @@ export default function TableData() {
               </TableHead>
               <TableHead>
                 <div className="flex items-center gap-2 ">
+                  Keys
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <CircleQuestionMark
+                        size={14}
+                        className="text-text-color mt-0.5 cursor-pointer"
+                      />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Redmine keys</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </TableHead>
+              <TableHead>
+                <div className="flex items-center gap-2 ">
                   Tools
                   <Tooltip>
                     <TooltipTrigger asChild>
@@ -310,6 +326,24 @@ export default function TableData() {
                     ) : (
                       <span className="cursor-not-allowed text-text-color ">
                         -
+                      </span>
+                    )}
+                  </TableCell>
+
+                  <TableCell>
+                    {auto.hasKeys ? (
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        referrerPolicy="no-referrer"
+                        href={auto.hasKeysLink}
+                        className="cursor-pointer hover:text-[#E3496D]"
+                      >
+                        Yes
+                      </a>
+                    ) : (
+                      <span className="cursor-not-allowed text-text-color ">
+                        No
                       </span>
                     )}
                   </TableCell>
