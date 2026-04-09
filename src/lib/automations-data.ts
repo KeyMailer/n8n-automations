@@ -77,7 +77,7 @@ export const automations: Automation[] = [
     status: "active",
     trigger: "Form",
     triggerLink:
-      "https://neightn.indie-demo.com/form/e7d07e11-48a7-4291-b7c4-58e02a867a4d",
+      "https://neightn.indie-demo.com/form/77c7f4c8-bf38-4eae-87ab-947842be691d",
     document: "Google Sheet",
     documentLink:
       "https://docs.google.com/spreadsheets/d/1apzXbgiOGMUsJIpnfvH-7c2qwJnVWqBedIcE7e7VVtM/edit?gid=0#gid=0",
