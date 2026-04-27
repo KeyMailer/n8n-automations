@@ -15,6 +15,21 @@ export interface Automation {
 
 export const automations: Automation[] = [
   {
+    id: "PdsU4McS7iDZEw2L",
+    name: "Trailer Ad Purchase Checker",
+    status: "active",
+    trigger: "Cron Schedule",
+    triggerLink: "",
+    document: "Google Sheet",
+    documentLink:
+      "https://docs.google.com/spreadsheets/d/1w8HJ8iHNSb6PDSh_bcgfkd1-UYMp6ODMVx793LsxPLQ/edit?gid=0#gid=0",
+    wikiLink:
+      "https://redmine.lifejak.com/projects/keymailer/wiki/Trailer_Ad_Purchase_Checker",
+    hasKeys: false,
+    tools: ["AI", "Madmin", "Google Sheet", "Youtube"],
+  },
+
+  {
     id: "YoXU6SNoq1I7n4CY",
     name: "Social Booking",
     status: "active",

@@ -343,7 +343,6 @@ export default function TableData() {
                     <div className="flex flex-wrap gap-2">
                       {auto.tools
                         .sort((a, b) => a.localeCompare(b))
-                        .slice(0, 3)
                         .map((tool, index) => (
                           <span
                             key={index}
@@ -352,11 +351,6 @@ export default function TableData() {
                             {tool}
                           </span>
                         ))}
-                      {auto.tools.length > 3 && (
-                        <span className="bg-[#EAEAEA] dark:bg-muted px-2 py-1 rounded-md text-xs">
-                          +{auto.tools.length - 3}
-                        </span>
-                      )}
                     </div>
                   </TableCell>
                   <TableCell>
